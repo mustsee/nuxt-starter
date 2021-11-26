@@ -44,14 +44,23 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  // Module options
+  // https://nuxtjs.org/docs/configuration-glossary/configuration-env/
+  env: {
+    apiKey: process.env.AIRTABLE_KEY || "apiKey ENV doesnt work",
+    stepsDB: process.env.STEPS_HOSTEL_BASE || "stepsDB ENV sdoesnt work",
+  },
+
+  // axios module options
+  axios: {},
+
+  // fontawesome module options
   fontawesome: {
     icons: {
       solid: ["faHotel"],
     },
   },
 
-  // Module options
+  // i18n module options
   i18n: {
     locales: [
       {

@@ -1,11 +1,5 @@
-export default {
-  header: {
-    nav: {
-      home: "accueil",
-      reviews: "commentaires",
-      gallery: "galerie",
-      contact: "contact",
-    },
-  },
-  welcome: "Bienvenue",
+import getTranslation from "./helper";
+
+export default (context, locale) => {
+  return getTranslation(context, locale);
 };

@@ -4,7 +4,7 @@
       <NuxtLink :to="localePath('/')"
         ><font-awesome-icon icon="hotel" style="font-size: 1.2em"
       /></NuxtLink>
-      <NuxtLink :to="localePath('/')">The Murray Library</NuxtLink>
+      <NuxtLink :to="localePath('/')">Steps</NuxtLink>
     </div>
     <div class="header-right">
       <nav>
