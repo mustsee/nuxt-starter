@@ -19,6 +19,13 @@ Project setup with these options :
 - Development tools : jsconfig.json
 - Version control system : Git
 
+Branch :
+
+- "minimal" :
+  - Remove starter HTML
+  - Add default layout including a header and a footer
+  - Add CSS : reset.css, min-height 100vh, background color #efefef
+
 ## Build Setup
 
 ```bash
