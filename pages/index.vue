@@ -1,7 +1,7 @@
 <template>
-  <Tutorial/>
+  <div>{{ $t("welcome") }}</div>
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
