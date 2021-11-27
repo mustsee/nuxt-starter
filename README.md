@@ -21,18 +21,9 @@ Project setup with these options :
 
 Branch :
 
-- "i18n" :
-  - Everything from the "minimal" branch :
-    - Remove starter HTML
-    - Add default layout including a header and a footer
-    - Add CSS : reset.css, min-height 100vh, background color #efefef
-  - i18n package :
-    - Header with menu
-    - 4 pages
-    - 3 languages
-    - Styled active link
-  - fontawesome package :
-    - Logo in the header
+- "airtable" :
+  - Everything from the "minimal" and the "i18n" branch
+  - Add POC connection to Airtable and retrieve basic informations
 
 ## Build Setup
 
