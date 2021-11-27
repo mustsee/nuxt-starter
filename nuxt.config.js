@@ -53,7 +53,8 @@ export default {
   // google font module options
   googleFonts: {
     families: {
-      Outfit: [400],
+      Outfit: [400, 600],
+      "Racing Sans One": [400],
     },
     display: "auto",
   },

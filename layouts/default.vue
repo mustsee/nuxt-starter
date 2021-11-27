@@ -26,8 +26,6 @@
 }
 
 main {
-  margin-top: 100px;
-  text-align: center;
-  font-size: 2em;
+  margin-top: 3em;
 }
 </style>

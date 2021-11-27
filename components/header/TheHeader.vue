@@ -13,7 +13,7 @@
         <ul>
           <li v-for="route in routes" :key="route.name">
             <NuxtLink :to="localePath(route.path)">{{
-              $t(`header.nav.${[route.name]}`)
+              $t(route.text)
             }}</NuxtLink>
           </li>
         </ul>
@@ -36,13 +36,16 @@
 </template>
 
 <script>
-import config from "@/helpers/config";
-
 export default {
   data() {
     return {
       openDropdown: false,
-      routes: config.routes,
+      routes: [
+        { text: "header.nav.home", path: "/" },
+        { text: "header.nav.reviews", path: "/reviews" },
+        { text: "header.nav.gallery", path: "/gallery" },
+        { text: "header.nav.contact", path: "/contact" },
+      ],
     };
   },
 };
@@ -65,6 +68,7 @@ li,
 }
 
 a {
+  color: #000;
   text-decoration: none;
   text-transform: uppercase;
   display: flex;
@@ -92,6 +96,7 @@ a.nuxt-link-exact-active {
 
 .header-left .name {
   font-size: 2em;
+  font-family: "Racing Sans One";
   color: var(--primary-color);
 }
 
@@ -123,6 +128,8 @@ nav {
   border-radius: 1em 0 1em 1em;
   box-shadow: 0 0 1.11111vw rgb(50 50 93 / 25%),
     0 0 0.34722vw rgb(77 77 77 / 10%);
+  background-color: #fff;
+  z-index: 100;
 }
 
 .dropdown div {
