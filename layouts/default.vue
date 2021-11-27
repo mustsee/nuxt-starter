@@ -12,7 +12,10 @@
 
 <style scoped>
 #app {
-  background-color: #efefef;
+  background-color: #fefefe;
+  font-family: Outfit, "sans-serif";
+  box-sizing: border-box;
+  color: #000;
 }
 
 .content-wrapper {
