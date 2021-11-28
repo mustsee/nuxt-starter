@@ -65,7 +65,7 @@ export default {
   // fontawesome module options
   fontawesome: {
     icons: {
-      solid: ["faHotel", "faGlobe"],
+      solid: ["faHotel", "faGlobe", "faCalendarWeek"],
     },
   },
 

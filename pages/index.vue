@@ -9,8 +9,28 @@
       <div class="content">
         <h1>Welcome to STEPS !!</h1>
         <div class="book">
-          <div class="from">From</div>
-          <div class="to">To</div>
+          <div class="picker">
+            <client-only>
+              <VueDatePicker
+                v-model="date"
+                :min-date="new Date()"
+                placeholder=" From arrival To departure"
+                range
+                range-header-text="From %d To %d"
+                :range-input-text="rangeInputText"
+                fullscreen-mobile
+                :visible-years-number="1"
+                :max-date="maxDate"
+                color="#fa6400"
+                validate
+              >
+                <template #input-icon>
+                  <font-awesome-icon icon="calendar-week" style="color: #333" />
+                </template>
+              </VueDatePicker>
+            </client-only>
+          </div>
+
           <div class="book-action">BOOK</div>
         </div>
       </div>
@@ -44,11 +64,18 @@
 
 <script>
 import Airtable from "airtable";
+import "@mathieustan/vue-datepicker/dist/vue-datepicker.min.css";
+import { VueDatePicker } from "@mathieustan/vue-datepicker";
+
+const date = new Date();
 
 export default {
   name: "PageIndex",
+  components: { VueDatePicker },
   data() {
     return {
+      date: {},
+      maxDate: `${date.getFullYear() + 1}-12-31`,
       images: {
         heroImg: "",
         row1Img: "",
@@ -59,6 +86,11 @@ export default {
         row2Img: "",
       },
     };
+  },
+  computed: {
+    rangeInputText() {
+      return ` ${this.date.start}  To  ${this.date.end}`;
+    },
   },
   async asyncData({ env }) {
     try {
@@ -112,18 +144,29 @@ export default {
 
 .hero .book {
   display: flex;
+  height: 4em;
+}
+
+.hero .book .picker {
+  display: flex;
+  align-items: center;
   background-color: #fff;
-  border-radius: 2em;
-  font-size: 1em;
+  border-radius: 1em 0 0 1em;
+  padding: 0 1em 0 2em;
+  width: 305px;
+  box-sizing: border-box;
+}
+
+.hero .book-action {
+  padding: 0 3.25em;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #eaeaea;
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 0 1em 1em 0;
+  font-size: 1.25em;
   font-weight: 600;
-}
-
-.hero .book div {
-  padding: 1.5em 3em;
-}
-
-.hero .book div:not(:last-child) {
-  border-right: 2px solid #efefef;
 }
 
 /***********************
