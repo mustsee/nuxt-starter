@@ -76,6 +76,10 @@ a {
   padding: 0 1.25em;
 }
 
+li a {
+  padding: 0 2.25em;
+}
+
 a:visited {
   color: inherit;
 }
@@ -91,7 +95,8 @@ a.nuxt-link-exact-active {
 /* STYLING */
 .header-left,
 .header-right {
-  flex: 1;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-left .name {
@@ -107,7 +112,7 @@ a.nuxt-link-exact-active {
 
 nav {
   background: #fff;
-  padding: 0 8px;
+  padding: 0 0.5em;
   border-radius: 0 0 1em 1em;
   box-shadow: 0 0 1.11111vw rgb(50 50 93 / 25%),
     0 0 0.34722vw rgb(77 77 77 / 10%);
@@ -115,7 +120,7 @@ nav {
 
 .lang {
   position: relative;
-  padding: 0 2em;
+  padding: 0 2em 0 3em;
   align-items: center;
   cursor: pointer;
 }
