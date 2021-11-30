@@ -19,13 +19,13 @@
 }
 
 .content-wrapper {
-  margin: 0 auto;
-  padding: 0 1rem;
-  max-width: 1280px;
+  /* margin: 0 auto; */
+  /* padding: 0 1rem; */
+  /* max-width: 1280px; */
   min-height: 100vh;
 }
 
 main {
-  margin-top: 3em;
+  margin-top: 1em;
 }
 </style>

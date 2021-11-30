@@ -21,7 +21,10 @@ export default {
   css: ["@/assets/css/reset.css", "@/assets/css/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/clear-console.client.js"],
+  plugins: [
+    { src: "~/plugins/clear-console-client.js" },
+    { src: "~/plugins/vue-silent-box.js" },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
@@ -55,6 +58,8 @@ export default {
     families: {
       Outfit: [400, 600],
       "Racing Sans One": [400],
+      "Bebas Neue": [400],
+      Montserrat: [400, 500, 600],
     },
     display: "auto",
   },
@@ -65,7 +70,7 @@ export default {
   // fontawesome module options
   fontawesome: {
     icons: {
-      solid: ["faHotel", "faGlobe", "faCalendarWeek"],
+      solid: ["faHotel", "faGlobe", "faCalendarWeek", "faChevronRight"],
     },
   },
 
