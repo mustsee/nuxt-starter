@@ -1,31 +1,37 @@
 <template>
   <header>
-    <div class="header-left">
-      <NuxtLink :to="localePath('/')"
-        ><div class="logo">
-          <img
-            src="@/assets/img/princes_street_logo.jpg"
-            alt="Princes Street Hostel logo"
-          /></div
-      ></NuxtLink>
-    </div>
-    <div class="header-right">
-      <nav>
-        <ul>
-          <li v-for="route in routes" :key="route.name">
-            <NuxtLink :to="localePath(route.path)">{{
-              $t(route.text)
-            }}</NuxtLink>
-          </li>
-        </ul>
-      </nav>
-      <div class="lang" @click="openDropdown = !openDropdown">
-        <font-awesome-icon icon="globe" style="font-size: 1.2em; color: #000" />
-        <div class="dropdown" v-if="openDropdown">
-          <div v-for="locale in $i18n.locales" :key="locale.code">
-            <NuxtLink :to="switchLocalePath(locale.code)">{{
-              locale.name
-            }}</NuxtLink>
+    <div class="background"></div>
+    <div class="header-wrapper">
+      <div class="header-left">
+        <NuxtLink :to="localePath('/')"
+          ><div class="logo">
+            <img
+              src="@/assets/img/princes_street_logo.jpg"
+              alt="Princes Street Hostel logo"
+            /></div
+        ></NuxtLink>
+      </div>
+      <div class="header-right">
+        <nav>
+          <ul>
+            <li v-for="route in routes" :key="route.name">
+              <NuxtLink :to="localePath(route.path)">{{
+                $t(route.text)
+              }}</NuxtLink>
+            </li>
+          </ul>
+        </nav>
+        <div class="lang" @click="openDropdown = !openDropdown">
+          <font-awesome-icon
+            icon="globe"
+            style="font-size: 1.5em; color: #000"
+          />
+          <div class="dropdown" v-if="openDropdown">
+            <div v-for="locale in $i18n.locales" :key="locale.code">
+              <NuxtLink :to="switchLocalePath(locale.code)">{{
+                locale.name
+              }}</NuxtLink>
+            </div>
           </div>
         </div>
       </div>
@@ -51,12 +57,29 @@ export default {
 
 <style scoped>
 header {
+  position: relative;
+}
+
+header .background {
+  position: absolute;
+  background: var(--primary-color);
+  height: 6em;
+  width: 100%;
+}
+
+.header-wrapper {
+  position: relative;
   display: flex;
-  height: 5em;
+
+  height: 9em;
 
   margin: 0 auto;
   padding: 0 1em;
   max-width: 1280px;
+
+  background-color: #fff;
+
+  z-index: 100;
 }
 
 .header-left,
@@ -106,41 +129,46 @@ a.nuxt-link-exact-active {
 }
 
 .header-left .logo {
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  margin: 0 2em 0 2em;
+  height: 8em;
+  width: 8em;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
 }
 
 .header-left .logo img {
-  height: inherit;
-  border-radius: 50%;
+  height: 7em;
+  width: 7em;
 }
 
 .header-right {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
 nav {
   padding: 0 0.5em;
+  height: 5em;
 }
 
 .lang {
   font-family: "Montserrat";
   font-weight: 600;
   position: relative;
-  padding: 0 2em 0 3em;
+  padding: 0 2em;
   align-items: center;
   cursor: pointer;
+  height: 5em;
 }
 
 .dropdown {
   position: absolute;
-  top: 5em;
-  right: 2em;
-  padding: 0.75em;
+  top: 6em;
+  right: 3em;
+  padding: 1em;
   border-radius: 1em 0 1em 1em;
   box-shadow: 0 0 1.11111vw rgb(50 50 93 / 25%),
     0 0 0.34722vw rgb(77 77 77 / 10%);

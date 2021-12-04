@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <div class="content-wrapper">
-      <TheHeader />
+      <div class="background">
+        <TheHeader />
+        <TheHero v-if="isHome" />
+      </div>
       <main>
         <Nuxt />
       </main>
@@ -10,12 +13,32 @@
   </div>
 </template>
 
+<script>
+export default {
+  computed: {
+    isHome() {
+      return this.$route.name.includes("index");
+    },
+  },
+  mounted() {
+    this.isHome;
+  },
+};
+</script>
+
 <style scoped>
 #app {
-  background-color: #fefefe;
+  position: relative;
+  background-color: var(--primary-color);
   font-family: Outfit, "sans-serif";
   box-sizing: border-box;
   color: #000;
+}
+
+.background {
+  background-image: url("@/assets/img/heroImg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .content-wrapper {
@@ -26,6 +49,8 @@
 }
 
 main {
-  margin-top: 1em;
+  /*  position: absolute;
+  width: 100%;
+  top: 42em; */
 }
 </style>
