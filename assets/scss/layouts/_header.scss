@@ -1,0 +1,77 @@
+header {
+  .logo {
+    @include vertical-align;
+    height: $header-height;
+    padding: 0 2em;
+    img {
+      height: 7em;
+      width: 7em;
+    }
+  }
+  .header-right {
+    @include vertical-align;
+    flex: 1;
+    justify-content: space-between;
+    nav {
+      @include vertical-align;
+      height: 5em;
+      ul,
+      li,
+      a {
+        height: inherit;
+      }
+      ul {
+        display: flex;
+        li {
+          font-family: "Bebas Neue";
+          font-size: 1.75em;
+          a {
+            @include vertical-align;
+            @include a-default;
+            text-transform: uppercase;
+            &.nuxt-link-exact-active {
+              color: $color-primary;
+              text-decoration: underline;
+            }
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .lang {
+      @include vertical-align;
+      position: relative;
+      padding: 0 2em;
+      cursor: pointer;
+      height: 5em;
+      .dropdown {
+        position: absolute;
+        top: 5em;
+        right: 3em;
+        padding: 1em;
+        border-radius: 1em 0 1em 1em;
+        box-shadow: 0 0 1.11111vw rgb(50 50 93 / 25%),
+          0 0 0.34722vw rgb(77 77 77 / 10%);
+        background-color: $color-white;
+        z-index: 100;
+        div {
+          padding: 0.2em;
+          text-align: right;
+          a {
+            font-weight: 600;
+            @include a-default;
+            &.nuxt-link-exact-active {
+              color: $color-primary;
+              text-decoration: underline;
+            }
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

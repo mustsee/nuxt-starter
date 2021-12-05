@@ -18,7 +18,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["@/assets/css/reset.css"],
+  css: ["@/assets/css/reset.css", "@/assets/scss/main.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -29,7 +29,15 @@ export default {
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxtjs/fontawesome"],
+  buildModules: [
+    "@nuxtjs/fontawesome",
+    "@nuxtjs/google-fonts",
+    "@nuxtjs/style-resources",
+  ],
+
+  styleResources: {
+    scss: ["~assets/scss/style-resources.scss"],
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -44,14 +52,20 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  // Module options
+  googleFonts: {
+    families: {
+      Montserrat: [400, 500, 600],
+      "Bebas Neue": [400],
+    },
+    display: "auto",
+  },
+
   fontawesome: {
     icons: {
-      solid: ["faHotel"],
+      solid: ["faGlobe", "faCalendarWeek", "faChevronRight"],
     },
   },
 
-  // Module options
   i18n: {
     locales: [
       {
@@ -59,18 +73,21 @@ export default {
         iso: "en",
         file: "en.js",
         dir: "ltr",
+        name: "English",
       },
       {
         code: "fr",
         iso: "fr",
         file: "fr.js",
         dir: "ltr",
+        name: "Français",
       },
       {
         code: "es",
         iso: "es",
         file: "es.js",
         dir: "ltr",
+        name: "Español",
       },
     ],
     langDir: "~/locales/",

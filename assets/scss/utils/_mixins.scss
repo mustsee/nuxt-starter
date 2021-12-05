@@ -1,0 +1,10 @@
+@mixin vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+@mixin a-default {
+  color: $color-default-text;
+  text-decoration: none;
+  padding: 0 1em;
+}

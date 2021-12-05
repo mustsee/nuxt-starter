@@ -1,10 +1,15 @@
 <template>
   <header>
     <div class="header-left">
-      <NuxtLink :to="localePath('/')"
-        ><font-awesome-icon icon="hotel" style="font-size: 1.2em"
-      /></NuxtLink>
-      <NuxtLink :to="localePath('/')">The Murray Library</NuxtLink>
+      <div class="header-left">
+        <NuxtLink :to="localePath('/')"
+          ><div class="logo">
+            <img
+              src="@/static/princes_street_logo.jpg"
+              alt="Princes Street Hostel logo"
+            /></div
+        ></NuxtLink>
+      </div>
     </div>
     <div class="header-right">
       <nav>
@@ -31,54 +36,26 @@
           </li>
         </ul>
       </nav>
-      <span class="delimiter">//</span>
-      <div class="lang">
-        <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
-        <NuxtLink :to="switchLocalePath('fr')">Français</NuxtLink>
-        <NuxtLink :to="switchLocalePath('es')">Español</NuxtLink>
+      <div class="lang" @click="openDropdown = !openDropdown">
+        <font-awesome-icon icon="globe" style="font-size: 1.5em; color: #333" />
+        <div class="dropdown" v-if="openDropdown">
+          <div v-for="locale in $i18n.locales" :key="locale.code">
+            <NuxtLink :to="switchLocalePath(locale.code)">{{
+              locale.name
+            }}</NuxtLink>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 </template>
 
-<style scoped>
-header {
-  display: flex;
-  justify-content: space-between;
-  height: 3em;
-}
-
-.header-left,
-.header-right,
-nav,
-ul,
-li,
-.lang {
-  display: flex;
-}
-
-.delimiter {
-  display: flex;
-  align-items: center;
-}
-
-a {
-  text-decoration: none;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  padding: 0 1.25em;
-}
-
-a:visited {
-  color: inherit;
-}
-
-a:hover {
-  color: blue;
-}
-
-a.nuxt-link-exact-active {
-  color: blue;
-}
-</style>
+<script>
+export default {
+  data() {
+    return {
+      openDropdown: false,
+    };
+  },
+};
+</script>

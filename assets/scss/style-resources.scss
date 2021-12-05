@@ -1,0 +1,19 @@
+// https://github.com/nuxt-community/style-resources-module/
+
+// Do not import actual styles.
+// Use this module only to import variables, mixins, functions (et cetera)
+// as they won't exist in the actual build.
+// Importing actual styles will include them in every component and
+// will also make your build/HMR magnitudes slower. Do not do this!
+
+// Import order :
+// 1. Utils : variables, functions, mixins, placeholders
+// 2. Vendor
+// 3. Base
+// 4. Components
+// 5. Layouts
+// 6. Pages
+// 7. Themes
+
+@import "./utils/variables";
+@import "./utils/mixins";

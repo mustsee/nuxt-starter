@@ -1,0 +1,15 @@
+// Import order :
+// 1. Utils : variables, functions, mixins, placeholders
+// 2. Vendor
+// 3. Base
+// 4. Components
+// 5. Layouts
+// 6. Pages
+// 7. Themes
+
+@import "./base/base";
+@import "./components/button";
+@import "./layouts/layouts";
+@import "./layouts/header";
+@import "./layouts/hero";
+@import "./pages/index";
