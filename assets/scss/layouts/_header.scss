@@ -14,7 +14,10 @@ header {
     justify-content: space-between;
     nav {
       @include vertical-align;
-      height: 5em;
+      height: $header-height;
+      padding: 0 5em;
+      clip-path: polygon(0% 0%, 100% 0, 92% 70%, 10% 85%);
+      background-color: $color-secondary;
       ul,
       li,
       a {

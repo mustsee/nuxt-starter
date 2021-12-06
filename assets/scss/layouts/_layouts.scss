@@ -8,6 +8,13 @@
     height: 6em;
     width: 100%;
     background-color: $color-primary;
+    div {
+      position: absolute;
+      top: 6em;
+      height: 0.25em;
+      width: 100%;
+      background-color: $color-secondary;
+    }
   }
 }
 
