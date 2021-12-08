@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/es/reviews", {data:[{}],fetch:{},mutations:void 0});
