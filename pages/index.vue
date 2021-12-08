@@ -34,5 +34,15 @@
 <script>
 export default {
   name: "PageIndex",
+  header() {},
+
+  /*   async asyncData({ $axios, error }) {
+    try {
+      const data = await $axios.$get("airtable-api");
+      return data;
+    } catch (e) {
+      error(e); // Show the nuxt error page with the thrown error
+    }
+  }, */
 };
 </script>

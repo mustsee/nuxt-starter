@@ -7,6 +7,7 @@
       <TheHeader />
       <TheHero v-if="isHome" />
     </div>
+    <div v-if="$nuxt.isOffline">You are offline.</div>
     <main>
       <Nuxt />
     </main>
@@ -18,6 +19,7 @@
 export default {
   computed: {
     isHome() {
+      if (!this.$route.name) return;
       return this.$route.name.includes("index");
     },
   },
